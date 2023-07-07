@@ -4,10 +4,10 @@ Calculating the Years of Life Lost to opioid-related deaths in the US.
 Work done at Johns Hopkins University, by <a href="https://alsnhll.github.io">Alison L Hill</a> and <a href="https://annehebert.github.io">Anne H. Hébert</a>
 
 ## Summary
-The opioid crisis is a public health emergency in the US, with overdose deaths increasing each year.
+The opioid crisis is a public health emergency in the US, with opioid overdose deaths increasing each year. Here we use the metric of years of life lost to characterize the burden of the opioid epidemic across demographic groups. We estimate that nearly 3 million years of life were lost to the opioid crisis in 2021 alone, and that the US population's life expectancy at birth was reduced by 0.65 years. We found that the crisis worsened in almost all 50 states during this time, and that the demographics of those most impacted by the opioid epidemic are shifting. People of color are now experiencing the high years of life lost per capita and the largest decrease in life expectancy. 
 
 ## Repo contents
-This repository contains R code calculating the years of life lost to the opioid crisis in the US. 
+This repository contains R code calculating the years of life lost to the opioid-related deaths in the US, as well as the resulting reduction in life expectancy.  
 
 #### Files
 <ul>
