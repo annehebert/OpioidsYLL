@@ -1,0 +1,182 @@
+
+
+This file contains instructions for downloading the data files used in YearsLifeLost.R to estimate the years of life lost and the life expectancy reduction by demographic group, and in YLL_state.R to estimate the years of life lost by state. First are the instructions for downloading the death counts from CDC WONDER, and at the bottom are the instructions for the NVSS life tables.
+
+
+CDC WONDER multiple cause of death database download instructions:
+
+https://wonder.cdc.gov/mcd-icd10-expanded.html
+
+When downloading opioid overdose death data, select underlying cause of death: 
+X40,41,42,43,44, X60-64, X85, Y10-14 
+
+and select multiple cause of death (these can be copy/pasted into the browser): 
+T40.0 (Opium)
+T40.1 (Heroin)
+T40.2 (Other opioids)
+T40.3 (Methadone)
+T40.4 (Other synthetic narcotics)
+T40.6 (Other and unspecified narcotics)
+
+All_deaths_* selectYear*_age_gender_race.txt
+	1. Group results by: Age, gender, single race 6, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_age_gender_race.txt
+Same as above, but select opioid overdose death codes for sections 6&7
+	1. Group results by: Age, gender, single race 6, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_5yage_gender_race.txt
+Same as above, but select opioid overdose death codes for sections 6&7 and select 5 year age groups for section 3
+	1. Group results by: Age, gender, single race 6, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick 5 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+
+Opioid_deaths_* selectYear*_5yage_gender_hisp_origin.txt
+	1. Group results by: Age, gender, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick 5 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+
+All_deaths_* selectYear*_age_race.txt
+	1. Group results by: Age, single race 6, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_age_race.txt
+Same as above, but select opioid overdose death codes for sections 6&7
+	1. Group results by: Age, single race 6, hispanic origin
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+
+All_deaths_* selectYear*_age_gender.txt
+	1. Group results by: Age, gender
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_age_gender.txt
+Same as above, but select opioid overdose death codes for sections 6&7
+	1. Group results by: Age, gender
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+
+All_deaths_* selectYear*_age.txt
+	1. Group results by: Age
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_age.txt
+Same as above, but select opioid overdose death codes for sections 6&7
+	1. Group results by: Age
+	2. Select location: all states
+	3. Select demographics: all ages (pick single year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+Opioid_deaths_* selectYear*_5yage.txt
+Same as above, but select opioid overdose death codes for sections 6&7 and select 5y age in section 3
+	1. Group results by: Age
+	2. Select location: all states
+	3. Select demographics: all ages (pick 5 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+
+For YLL_state.R, to estimate the years of life lost by state, download the following files
+All_deaths_*selectYear*_age_state.txt
+	1. Group results by: Age, state
+	2. Select location: all states
+	3. Select demographics: all ages (pick 1 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+
+Opioid_deaths_*selectYear*_5yage_state.txt
+Same as above, but select opioid overdose death codes for sections 6&7 and select 5y age in section 3
+	1. Group results by: Age, state
+	2. Select location: all states
+	3. Select demographics: all ages (pick 5 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: opioid overdose death codes defined above
+	7. Select multiple cause of death: opioid overdose death codes defined above
+	8. Other options: select “export results” and unselect “show totals”
+
+All_deaths_*selectYear*_state.txt
+	1. Group results by: State
+	2. Select location: all states
+	3. Select demographics: all ages (pick 1 year age groups), all genders, all races, all origins
+	4. Select year and month: select *year* desired
+	5. Select weekday, autopsy and place of death: select all
+	6. Select underlying cause of death: all
+	7. Select multiple cause of death: all
+	8. Other options: select “export results” and unselect “show totals”
+
+
+
+Life tables are downloaded from the National Vital Statistics System 
+
+https://www.cdc.gov/nchs/nvss/life-expectancy.htm
+
+Select the publication for the desired year (e.g. United States Life Tables, 2020), and find download link for each race/ethnicity and gender. To reproduce all combinations of demographic groups used in YearsLifeLost.R, download the following 18 life tables:
+total population (total, total male and total female)
+Hispanic (total hispanic, hispanic male and hispanic female)
+Non-Hispanic American Indian or Alaska Native (total, male, female)
+Non-Hispanic Asian (total, male, female)
+Non-Hispanic Black (total, male, female)
+Non-Hispanic White (total, male, female)
+
+
