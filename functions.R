@@ -556,6 +556,62 @@ import.deaths.data <- function(selectAgeGrouping, selectStratVars, selectCoOccur
 }
 
 
+import.state.deaths.data <- function(year, drug){
+  df_all_deaths_5yage_state <- read.delim(file = paste('data/state_map_data/All_deaths_',
+                                                       year,
+                                                       '_5yage_state.txt', sep = ""),
+                                          header = TRUE, sep = "\t")
+  df_all_deaths_5yage_state <- clean.mortality.data(df_all_deaths_5yage_state) %>%
+    filter(Ages.Text != 'Not Stated')
+  df_all_deaths_state <- read.delim(file = paste('data/state_map_data/All_deaths_',
+                                                 year, '_state.txt', sep = ""),
+                                    header = TRUE, sep = "\t")
+  df_all_deaths_state <- clean.mortality.data(df_all_deaths_state) 
+  
+  df_all_death_dist <- read.delim(
+    file = paste('data/All_deaths_', year, '_5yage.txt', sep = ""),
+    header = TRUE, sep = "\t")
+  
+  if(drug == 'opioids'){
+    df_opioid_deaths_5yage_state <- read.delim(file = paste('data/state_map_data/Opioid_deaths_',
+                                                            year,
+                                                            '_5yage_state_suppressed.txt', sep = ""),
+                                               header = TRUE, sep = "\t")
+    df_opioid_deaths_5yage_state <- clean.mortality.data(df_opioid_deaths_5yage_state) %>%
+      filter(Ages.Text != 'Not Stated')
+    df_opioid_deaths_state <- read.delim(file = paste('data/state_map_data/Opioid_deaths_',
+                                                      year, '_state.txt', sep = ""),
+                                         header = TRUE, sep = "\t")
+    df_opioid_deaths_state <- clean.mortality.data(df_opioid_deaths_state)  %>%
+      filter(!is.na(Deaths))
+    
+    df_opioid_death_dist <- read.delim(
+      file = paste('data/Opioid_deaths_', year, '_age_distribution.txt', sep = ""),
+      header = TRUE, sep = "\t")
+  } else if(drug == 'all drugs'){
+    df_opioid_deaths_5yage_state <- read.delim(file = paste('data/state_map_data/All_drug_deaths_',
+                                                            year,
+                                                            '_5yage_state.txt', sep = ""),
+                                               header = TRUE, sep = "\t")
+    df_opioid_deaths_5yage_state <- clean.mortality.data(df_opioid_deaths_5yage_state) %>%
+      filter(Ages.Text != 'Not Stated')
+    df_opioid_deaths_state <- read.delim(file = paste('data/state_map_data/All_drug_deaths_',
+                                                      year, '_state.txt', sep = ""),
+                                         header = TRUE, sep = "\t")
+    df_opioid_deaths_state <- clean.mortality.data(df_opioid_deaths_state)  %>%
+      filter(!is.na(Deaths))
+    
+    df_opioid_death_dist <- read.delim(
+      file = paste('data/All_drug_deaths_', year, '_age_distribution.txt', sep = ""),
+      header = TRUE, sep = "\t")
+  }
+  
+  return(list(df_all_deaths_5yage_state, df_all_deaths_state, df_all_death_dist,
+              df_opioid_deaths_5yage_state, df_opioid_deaths_state, df_opioid_death_dist))
+} # end function
+
+
+
 format.deaths.data <- function(stratVars = selectStratVars, 
                                gender = selectGender, 
                                raceEthn = selectRaceEthn, 
